@@ -167,10 +167,11 @@ class ResBlock(Model):
     def __init__(self,
                  filters,
                  kernel_size,
+                 block_name="ResBlock",
                  norm_type="instance",
                  pad_type="constant",
                  **kwargs):
-        super(ResBlock, self).__init__(name="ResBlock")
+        super(ResBlock, self).__init__(name=block_name)
         padding = (kernel_size - 1) // 2
         padding = (padding, padding)
         self.model = tf.keras.models.Sequential()
