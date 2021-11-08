@@ -42,7 +42,7 @@ class Generator(Model):
         self.residual_blocks = tf.keras.models.Sequential([
             resblock(
                 filters=base_filters * 4,
-                kernel_size=3) for _ in range(num_resblocks)])
+                kernel_size=3,block_name="res_block_"+str(i)) for i in range(num_resblocks)])
         self.up_conv1 = upconv(filters=base_filters * 2,
                                kernel_size=3,
                                norm_type=norm_type,
