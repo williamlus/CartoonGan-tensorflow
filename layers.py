@@ -76,9 +76,9 @@ class FlatConv(Model):
 class BasicShuffleUnitV2(Model):
     def __init__(self,
                  filters,  # NOTE: will be filters // 2
-                 block_name="BasicShuffleUnitV2",
                  norm_type="instance",
                  pad_type="constant",
+                 block_name="BasicShuffleUnitV2",
                  **kwargs):
         super(BasicShuffleUnitV2, self).__init__(name=block_name)
         filters //= 2
@@ -168,9 +168,9 @@ class ResBlock(Model):
     def __init__(self,
                  filters,
                  kernel_size,
-                 block_name="ResBlock",
                  norm_type="instance",
                  pad_type="constant",
+                 block_name="ResBlock",
                  **kwargs):
         super(ResBlock, self).__init__(name=block_name)
         padding = (kernel_size - 1) // 2
