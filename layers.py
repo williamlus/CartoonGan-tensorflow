@@ -76,10 +76,11 @@ class FlatConv(Model):
 class BasicShuffleUnitV2(Model):
     def __init__(self,
                  filters,  # NOTE: will be filters // 2
+                 block_name="BasicShuffleUnitV2",
                  norm_type="instance",
                  pad_type="constant",
                  **kwargs):
-        super(BasicShuffleUnitV2, self).__init__(name="BasicShuffleUnitV2")
+        super(BasicShuffleUnitV2, self).__init__(name=block_name)
         filters //= 2
         self.model = tf.keras.models.Sequential([
             Conv2D(filters, 1, use_bias=False),
